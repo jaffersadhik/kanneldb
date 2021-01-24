@@ -1,0 +1,12 @@
+version: '3'
+services:
+  kanneldb:
+    image: "winnovature/mariadb:production"
+    ports:
+      -  "7006:3306"
+    volumes:
+      - "/home/unitia/production/kanneldb:/var/lib/mysql"
+      - "/home/unitia/production/kanneldb/my.cnf:/etc/mysql/my.cnf"
+    environment:
+      - MYSQL_ROOT_PASSWORD=kannel 
+      - TZ=Asia/Kolkata
